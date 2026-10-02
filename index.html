@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RunningStar – Sepatu Lari untuk Pelari Indonesia</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--bg2:#f5f3f0;--ink:#141414;--mute:#5d5d5d;--or:#ff5a1f;--bl:#2457ff;--card:#fff;--line:#e4e0db;--inv:#141414;--invt:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141414;--bg2:#1d1d1d;--ink:#f4f1ed;--mute:#a9a49e;--card:#1d1d1d;--line:#333;--inv:#ff5a1f;--invt:#141414}}
+:root[data-theme="dark"]{--bg:#141414;--bg2:#1d1d1d;--ink:#f4f1ed;--mute:#a9a49e;--card:#1d1d1d;--line:#333;--inv:#ff5a1f;--invt:#141414}
+html{scroll-padding-top:70px;scroll-behavior:smooth}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 Barlow,system-ui,sans-serif}
+h1,h2,h3,.logo{font-family:"Barlow Condensed","Arial Narrow",Impact,sans-serif;font-weight:800;line-height:1;text-transform:uppercase;letter-spacing:.01em}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0}
+:focus-visible{outline:3px solid var(--or);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+section{padding:64px 0}
+h2{font-size:clamp(34px,6vw,52px);margin-bottom:24px}
+.btn{display:inline-block;background:var(--or);color:#141414;font-weight:600;padding:14px 28px;border-radius:999px;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-size:28px}.logo b{color:var(--or)}
+.menu{display:flex;gap:24px;font-weight:500}
+.menu a:hover{color:var(--or)}
+.cartbtn{background:var(--bl);color:#fff;padding:9px 16px;border-radius:999px;font-weight:600}
+@media(max-width:640px){.menu{display:none}}
+.hero{background:var(--ink);color:var(--bg);padding:56px 0;overflow:hidden}
+:root[data-theme="dark"] .hero{background:#000;color:#f4f1ed}
+.hero .wrap{display:grid;gap:32px;align-items:center}
+.hero h1{font-size:clamp(52px,12vw,112px);color:#fff}
+.hero h1 em{font-style:normal;color:var(--or)}
+.hero p{max-width:440px;margin:20px 0 28px;color:#cfcac4}
+#heroShoe{position:relative;display:grid;place-items:center}
+#heroShoe::before{content:"";position:absolute;width:78%;aspect-ratio:1;background:var(--bl);border-radius:50%}
+.hero svg{position:relative;width:100%;max-width:560px;justify-self:center;transform:rotate(-8deg)}
+@media(min-width:860px){.hero .wrap{grid-template-columns:1fr 1fr}}
+.filters{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+.filters label{display:flex;flex-direction:column;font-size:14px;color:var(--mute);gap:4px;flex:1 1 150px}
+.filters select{padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font:inherit}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-6px);border-color:var(--or)}
+.card .img{background:var(--bg2);padding:20px 16px}
+.card .img svg{width:100%;display:block}
+.card .body{padding:16px 18px 20px}
+.cat{font-size:13px;color:var(--mute)}
+.card h3{font-size:26px;margin:2px 0 6px}
+.stars{color:var(--or);letter-spacing:2px}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:12px;gap:8px}
+.price{font-weight:600;font-size:18px}
+.add{background:var(--inv);color:var(--invt);padding:9px 14px;border-radius:999px;font-weight:600;font-size:14px}
+.add:hover{background:var(--or);color:#141414}
+.empty{color:var(--mute);padding:24px 0}
+.feat{background:var(--bg2)}
+.fgrid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.fgrid div{border-top:4px solid var(--bl);padding-top:16px}
+.fgrid svg{width:40px;height:40px;stroke:var(--or);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fgrid h3{font-size:26px;margin:10px 0 6px}
+.fgrid p{color:var(--mute)}
+.rgrid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.rev{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.who{display:flex;gap:12px;align-items:center;margin-top:16px}
+.av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:700;color:#141414}
+.who small{display:block;color:var(--mute)}
+.promo{background:var(--bl);color:#fff}
+.promo .wrap{display:grid;gap:24px;align-items:center}
+@media(min-width:860px){.promo .wrap{grid-template-columns:1fr 1fr}}
+.promo h2{margin:0}
+.promo form{display:flex;gap:8px;flex-wrap:wrap}
+.promo input{flex:1 1 200px;padding:14px 18px;border-radius:999px;border:2px solid #141414;background:#fff;color:#141414;font:inherit}
+.promo button{background:var(--or);color:#141414;padding:14px 26px;border-radius:999px;font-weight:600}
+#msg{margin-top:10px;font-weight:600;min-height:26px}
+footer{background:#141414;color:#d9d4ce;padding:48px 0 32px}
+footer .wrap{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+footer h3{color:#fff;font-size:22px;margin-bottom:10px}
+footer li{list-style:none;margin:4px 0}footer ul{padding:0}
+footer a:hover{color:var(--or)}
+.copy{margin-top:32px;font-size:14px;color:#8d8882}
+.pay span{display:inline-block;border:1px solid #555;border-radius:6px;padding:2px 10px;margin:0 6px 6px 0;font-size:14px}
+#drawer{position:fixed;top:0;right:0;bottom:0;width:min(380px,100%);background:var(--bg);border-left:1px solid var(--line);z-index:20;transform:translateX(100%);transition:transform .3s;display:flex;flex-direction:column;padding:calc(20px + env(safe-area-inset-top,0px)) 20px calc(20px + env(safe-area-inset-bottom,0px))}
+#drawer.open{transform:none}
+#drawer header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+#drawer h2{font-size:34px;margin:0}
+.x{background:none;color:var(--ink);font-size:28px;line-height:1}
+#items{flex:1;overflow:auto}
+.it{display:flex;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}
+.it small{color:var(--mute);display:block}
+.qty{display:flex;align-items:center;gap:8px;margin-top:6px}
+.qty button{width:28px;height:28px;border-radius:50%;background:var(--bg2);color:var(--ink)}
+.rm{background:none;color:var(--mute);text-decoration:underline;font-size:14px}
+.total{display:flex;justify-content:space-between;font-weight:600;font-size:20px;margin:16px 0}
+#shade{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:15;display:none}
+#shade.on{display:block}
+.wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:12;display:flex;align-items:center;gap:8px;background:#25d366;color:#0b2e17;font-weight:600;padding:12px 18px;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.25);transition:transform .15s}
+.wa:hover{transform:scale(1.05)}
+.wab{display:block;text-align:center;margin-top:12px;background:#25d366;color:#0b2e17;font-weight:600;padding:10px;border-radius:999px;font-size:14px}
+.wab:hover{filter:brightness(1.08)}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.in{opacity:1;transform:none}
+.wa svg{width:24px;height:24px;fill:#0b2e17}
+@media(max-width:480px){.wa span{display:none}.wa{padding:14px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<a href="#top" class="logo">Running<b>Star</b></a>
+<div class="menu"><a href="#produk">Produk</a><a href="#fitur">Fitur</a><a href="#ulasan">Ulasan</a><a href="#kontak">Kontak</a></div>
+<button class="cartbtn" id="openCart" aria-label="Buka keranjang">Keranjang (<span id="count">0</span>)</button>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+<div>
+<h1>Lari lebih jauh. <em>Lebih ringan.</em></h1>
+<p>Sepatu lari untuk jalanan kota, jalur tanah, hingga hari lomba. Dipilih untuk pelari Indonesia dari 5K pertama sampai half marathon.</p>
+<a class="btn" href="#produk">Belanja Sekarang</a>
+</div>
+<div id="heroShoe"></div>
+</div></header>
+
+<section id="produk"><div class="wrap">
+<h2>Produk unggulan</h2>
+<div class="filters">
+<label>Kategori<select id="fCat"><option value="">Semua</option><option>Road</option><option>Trail</option><option>Racing</option></select></label>
+<label>Ukuran<select id="fSize"><option value="">Semua</option></select></label>
+<label>Harga<select id="fPrice"><option value="">Semua</option><option value="0-1000000">Di bawah Rp1.000.000</option><option value="1000000-1500000">Rp1.000.000 – Rp1.500.000</option><option value="1500000-99999999">Di atas Rp1.500.000</option></select></label>
+</div>
+<div class="grid" id="grid"></div>
+</div></section>
+
+<section class="feat" id="fitur"><div class="wrap">
+<h2>Dibuat untuk tiap langkah</h2>
+<div class="fgrid">
+<div><svg viewBox="0 0 24 24"><path d="M3 15c3 3 15 3 18 0M4 11c3 3 13 3 16 0M6 7c3 2 9 2 12 0"/></svg><h3>Bantalan empuk</h3><p>Midsole busa responsif meredam benturan di kilometer-kilometer akhir.</p></div>
+<div><svg viewBox="0 0 24 24"><path d="M4 18h16M7 18V9l5-4 5 4v9"/></svg><h3>Bobot ringan</h3><p>Mulai dari 190 gram per sepatu, hampir tak terasa di kaki.</p></div>
+<div><svg viewBox="0 0 24 24"><path d="M4 20l4-8 4 4 4-10 4 14"/></svg><h3>Grip kuat</h3><p>Sol karet berpola menjaga pijakan di aspal basah maupun tanah licin.</p></div>
+<div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/></svg><h3>Breathable</h3><p>Upper mesh berpori mengalirkan udara agar kaki tetap kering dan sejuk.</p></div>
+</div></div></section>
+
+<section id="ulasan"><div class="wrap">
+<h2>Kata pelari kami</h2>
+<div class="rgrid">
+<div class="rev"><div class="stars">★★★★★</div><p>Pakai Aero Pace buat latihan 10K tiap pagi di GBK. Empuk dan nggak bikin betis cepat pegal.</p><div class="who"><div class="av" style="background:#ffb089">DA</div><div>Dimas Anggara<small>Jakarta</small></div></div></div>
+<div class="rev"><div class="stars">★★★★★</div><p>Trail Ridge kuat banget di jalur Dieng yang licin. Gripnya terasa mantap dan sepatunya tahan lama.</p><div class="who"><div class="av" style="background:#c9d8a8">SW</div><div>Sari Wulandari<small>Bandung</small></div></div></div>
+<div class="rev"><div class="stars">★★★★☆</div><p>Ringan sekali untuk lomba. PB half marathon saya turun 4 menit setelah ganti ke Velox Racer.</p><div class="who"><div class="av" style="background:#a8c9e0">RP</div><div>Rizky Pratama<small>Surabaya</small></div></div></div>
+</div></div></section>
+
+<section class="promo" id="kontak"><div class="wrap">
+<div><h2>Diskon 15% untuk pembelian pertama</h2><p>Daftar newsletter dan dapatkan kode diskon langsung ke emailmu.</p></div>
+<div>
+<form id="news"><input type="email" id="email" placeholder="Alamat email kamu" aria-label="Alamat email" required><button type="submit">Daftar</button></form>
+<div id="msg" role="status"></div>
+</div></div></section>
+
+<footer><div class="wrap">
+<div><div class="logo" style="font-size:30px;color:#fff">Running<b>Star</b></div><p style="margin-top:8px">Perlengkapan lari untuk semua pelari Indonesia.</p></div>
+<div><h3>Tautan</h3><ul><li><a href="#produk">Produk</a></li><li><a href="#fitur">Fitur</a></li><li><a href="#ulasan">Ulasan</a></li></ul></div>
+<div><h3>Kontak</h3><ul><li>halo@runningstar.id</li><li><a href="https://wa.me/628888787918" target="_blank" rel="noopener">WhatsApp 0888-8787-918</a></li><li>Jl. Sudirman No. 10, Jakarta</li></ul><p style="margin-top:8px"><a href="#">Instagram</a> · <a href="#">TikTok</a> · <a href="#">YouTube</a></p></div>
+<div class="pay"><h3>Pembayaran</h3><span>BCA</span><span>Mandiri</span><span>GoPay</span><span>OVO</span><span>QRIS</span></div>
+</div><div class="wrap"><div class="copy">© 2026 RunningStar. Semua hak dilindungi.</div></div></footer>
+
+<div id="shade"></div>
+<aside id="drawer" aria-label="Keranjang belanja">
+<header><h2>Keranjang</h2><button class="x" id="closeCart" aria-label="Tutup keranjang">×</button></header>
+<div id="items"></div>
+<div class="total"><span>Total</span><span id="total">Rp0</span></div>
+<button class="btn" id="checkout">Pesan via WhatsApp</button>
+</aside>
+<a class="wa" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Chat WhatsApp RunningStar"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.7-3-1.3-4.9-4.300-5.100-4.500-.1-.2-1.200-1.600-1.200-3s.7-2.100 1-2.400c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.200.1.400 0 .500l-.3.500-.4.400c-.1.200-.3.300-.1.600.2.300.7 1.200 1.500 1.900 1 .9 1.900 1.200 2.200 1.300.3.100.4.100.6-.1l.8-1c.2-.3.400-.2.600-.1l1.900.9c.3.100.5.200.5.300.1.200.1.800-.1 1.500z"/></svg><span>Chat WhatsApp</span></a>
+
+<script>
+const P=[
+{id:1,n:"Aero Pace",c:"Road",p:1250000,r:5,s:[39,40,41,42,43],col:"#ff5a1f"},
+{id:2,n:"City Glide",c:"Road",p:890000,r:4,s:[38,39,40,41],col:"#2b6cb0"},
+{id:3,n:"Trail Ridge",c:"Trail",p:1450000,r:5,s:[40,41,42,43,44],col:"#4a7c3a"},
+{id:4,n:"Mud Hunter",c:"Trail",p:1190000,r:4,s:[39,40,42,44],col:"#8a5a2b"},
+{id:5,n:"Velox Racer",c:"Racing",p:1890000,r:5,s:[38,40,41,42],col:"#e11d48"},
+{id:6,n:"Sprint Zero",c:"Racing",p:1650000,r:4,s:[39,41,42,43],col:"#141414"}];
+const rp=n=>"Rp"+n.toLocaleString("id-ID");
+const shoe=c=>`<svg viewBox="0 0 300 150" role="img" aria-label="Sepatu lari"><path d="M20 112c0-26 6-48 12-62 18 4 36-2 48-14 10 18 34 30 62 36 34 6 66 14 92 34 10 8 10 22-4 26H34c-10 0-14-8-14-20z" fill="${c}"/><path d="M20 112h262v16c0 6-4 10-10 10H36c-10 0-16-6-16-14z" fill="#fff" stroke="#14141433"/><path d="M96 66l30 12M114 58l30 12M132 56l26 12" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M50 100c40 4 110 0 200 10" stroke="#fff" stroke-width="4" fill="none" opacity=".6"/></svg>`;
+document.getElementById("heroShoe").innerHTML=shoe("#ff5a1f");
+const fs=document.getElementById("fSize");
+[38,39,40,41,42,43,44].forEach(s=>fs.insertAdjacentHTML("beforeend",`<option>${s}</option>`));
+const cart={};
+function render(){
+ const c=fCat.value,s=+fSize.value,pr=fPrice.value.split("-").map(Number);
+ const list=P.filter(x=>(!c||x.c===c)&&(!s||x.s.includes(s))&&(!fPrice.value||(x.p>=pr[0]&&x.p<pr[1])));
+ grid.innerHTML=list.length?list.map(x=>`<article class="card"><div class="img">${shoe(x.col)}</div><div class="body"><div class="cat">${x.c} · EU ${x.s[0]}–${x.s[x.s.length-1]}</div><h3>${x.n}</h3><div class="stars" aria-label="Rating ${x.r} dari 5">${"★".repeat(x.r)}${"☆".repeat(5-x.r)}</div><div class="row"><span class="price">${rp(x.p)}</span><button class="add" data-id="${x.id}">Tambah ke Keranjang</button></div><a class="wab" target="_blank" rel="noopener" href="${wl(`Halo RunningStar, saya ingin memesan ${x.n} (${rp(x.p)}).\n\nUkuran: ...\nJumlah: 1\nNama: ...\nAlamat pengiriman: ...\n\nMohon info ketersediaan dan ongkir. Terima kasih!`)}">Pesan via WhatsApp</a></div></article>`).join(""):`<p class="empty">Tidak ada sepatu yang cocok. Ubah filter untuk melihat produk lain.</p>`;
+}
+[fCat,fSize,fPrice].forEach(e=>e.addEventListener("change",render));
+grid.addEventListener("click",e=>{const b=e.target.closest(".add");if(!b)return;const id=b.dataset.id;cart[id]=(cart[id]||0)+1;upd();b.textContent="Ditambahkan";setTimeout(()=>b.textContent="Tambah ke Keranjang",1000)});
+function upd(){
+ let n=0,t=0;const h=Object.keys(cart).map(id=>{const x=P.find(p=>p.id==id),q=cart[id];n+=q;t+=q*x.p;return `<div class="it"><div><strong>${x.n}</strong><small>${rp(x.p)}</small><div class="qty"><button data-a="-" data-id="${id}" aria-label="Kurangi">−</button><span>${q}</span><button data-a="+" data-id="${id}" aria-label="Tambah">+</button></div></div><div style="text-align:right"><div>${rp(q*x.p)}</div><button class="rm" data-a="x" data-id="${id}">Hapus</button></div></div>`}).join("");
+ items.innerHTML=h||`<p class="empty">Keranjang masih kosong. Pilih sepatu dari daftar produk.</p>`;
+ count.textContent=n;total.textContent=rp(t);
+}
+items.addEventListener("click",e=>{const b=e.target.closest("button[data-a]");if(!b)return;const id=b.dataset.id,a=b.dataset.a;if(a==="+")cart[id]++;else if(a==="-"){if(--cart[id]<=0)delete cart[id]}else delete cart[id];upd()});
+const tog=o=>{drawer.classList.toggle("open",o);shade.classList.toggle("on",o)};
+openCart.onclick=()=>tog(true);closeCart.onclick=shade.onclick=()=>tog(false);
+const WA="628888787918",wl=t=>`https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
+waFloat.href=wl("Halo RunningStar, saya tertarik dengan sepatu lari. Boleh minta info produk dan ukuran yang tersedia?");
+checkout.onclick=()=>{const ids=Object.keys(cart);if(!ids.length){alert("Keranjang masih kosong. Pilih sepatu dulu.");return}
+ let t=0;const l=ids.map(id=>{const x=P.find(p=>p.id==id),q=cart[id];t+=q*x.p;return `- ${x.n} x${q} (${rp(q*x.p)})`}).join("\n");
+ window.open(wl(`Halo RunningStar, saya ingin memesan:\n${l}\n\nTotal: ${rp(t)}\n\nUkuran: ...\nNama: ...\nAlamat pengiriman: ...\n\nMohon info ketersediaan, ongkir, dan cara pembayaran. Terima kasih!`),"_blank","noopener")};
+news.addEventListener("submit",e=>{e.preventDefault();msg.textContent="Terdaftar! Cek "+email.value+" untuk kode diskon 15%.";news.reset()});
+render();upd();
+try{
+ if("IntersectionObserver" in window){
+  document.documentElement.classList.add("js");
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.15});
+  document.querySelectorAll("section h2,.filters,.fgrid>div,.rev,.promo .wrap>div").forEach((el,i)=>{el.classList.add("rv");el.style.transitionDelay=(i%4)*80+"ms";io.observe(el)});
+ }
+}catch(e){}
+</script>
+</body>
+</html>
